@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+var Kosu = require("../"),
+    fs = require("fs"),
+    JSuck = require("jsuck"),
+    JSpit = require("jspit");
+
+try {
+  var query = JSON.parse(process.argv[2]);
+} catch (e) {
+  console.warn("Usage: kosu <query> [input]");
+  process.exit(1);
+}
+
+if (process.argv[3]) {
+  input = fs.createReadStream(process.argv[3]);
+} else {
+  input = process.stdin;
+}
+
+var kosu = new Kosu(query);
+
+console.warn(kosu.filter.toString());
+
+input.pipe(new JSuck()).pipe(kosu).pipe(new JSpit()).pipe(process.stdout);

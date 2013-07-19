@@ -1,0 +1,27 @@
+{
+  "name": "kosu",
+  "version": "0.0.0",
+  "description": "Filter streams according to SIQL queries",
+  "main": "index.js",
+  "bin": {
+    "kosu": "./bin/kosu"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/deoxxa/kosu.git"
+  },
+  "keywords": [
+    "filter",
+    "stream",
+    "siql",
+    "siphon.io"
+  ],
+  "author": "Conrad Pankoff <deoxxa@fknsrs.biz> (http://www.fknsrs.biz/)",
+  "license": "BSD",
+  "dependencies": {
+    "escodegen": "~0.0.24",
+    "jsuck": "~0.0.4",
+    "jspit": "~0.0.4",
+    "dotty": "0.0.2"
+  }
+}
